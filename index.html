@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Surinder Singh | Cybersecurity & Development</title>
+<meta name="description" content="Surinder Singh: cybersecurity professional, web developer and content creator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--panel:#111116;--line:#25252d;--text:#f2f2f4;--mute:#9a9aa6;--red:#e8374a;--red-d:#9c1226;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.d{font-family:Anton,Impact,'Arial Narrow',sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:.01em;margin:0;font-weight:400}
+.red{color:var(--red)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+header{position:sticky;top:0;z-index:20;background:rgba(7,7,10,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Anton,sans-serif;font-size:22px;letter-spacing:.04em}
+nav{display:flex;gap:26px;font-size:14px;color:var(--mute);overflow-x:auto}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:4px;border:0;cursor:pointer}
+.btn:hover{background:#ff4a5d}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text)}
+.btn.ghost:hover{border-color:var(--red)}
+/* hero */
+.hero{position:relative;border-top:0;padding:0;height:240vh}
+.stage{position:sticky;top:64px;height:calc(100vh - 64px);height:calc(100svh - 64px);overflow:hidden;display:flex;align-items:center}
+.cue{position:absolute;left:0;right:0;bottom:26px;text-align:center;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);opacity:calc(1 - var(--p,0)*5);pointer-events:none}
+.ghostword{position:absolute;left:0;right:0;top:50%;text-align:center;font-size:clamp(80px,23.5vw,400px);color:var(--red);white-space:nowrap;pointer-events:none;user-select:none;will-change:transform,opacity;transform:translateY(-50%) scale(calc(1 - var(--p,0)*.12));opacity:calc(1 - var(--p,0)*.86)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;width:100%;opacity:clamp(0,calc(var(--p,0)*2.2 - .5),1);transform:translateY(calc((1 - var(--p,0))*60px));pointer-events:none}
+.hero.on .wrap{pointer-events:auto}
+.hero h1{font-size:clamp(58px,10vw,132px);text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.tag{font-size:13px;color:var(--mute);margin:0 0 14px;max-width:46ch}
+.hero p.lead{max-width:44ch;color:#d4d4da;margin:22px 0 28px}
+.term{background:rgba(17,17,22,.92);border:1px solid var(--line);border-radius:8px;font:13px/1.8 ui-monospace,Menlo,Consolas,monospace;padding:0 0 14px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.term .bar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.term .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.term .bar i:first-child{background:var(--red)}
+.term div.l{padding:0 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--mute)}
+.term b{color:var(--red);font-weight:500}
+/* hover effects */
+nav a{position:relative;padding:4px 0;transition:color .2s}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after{transform:scaleX(1)}
+.logo{transition:color .2s}.logo:hover{color:var(--red)}
+.btn,.pill{transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(232,55,74,.35)}
+.btn.ghost:hover{box-shadow:none;background:rgba(232,55,74,.12)}
+.pill:hover{transform:translateY(-2px)}
+.term{transition:transform .3s,border-color .3s}.term:hover{transform:translateY(-4px);border-color:var(--red)}
+.row{position:relative;transition:padding .25s,background .25s}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);transform:scaleY(0);transition:transform .25s}
+.row:hover{background:var(--panel);padding-left:20px}
+.row:hover::before{transform:scaleY(1)}
+.row h3{transition:color .2s}.row:hover h3{color:var(--red)}
+.strip span{transition:color .2s,transform .2s;cursor:default}.strip span:hover{color:var(--red);transform:translateY(-3px)}
+.card{transition:transform .3s,box-shadow .3s}.card:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 24px 60px rgba(232,55,74,.3)}
+.skills li{transition:padding .2s,border-color .2s}.skills li:hover{padding-left:14px;border-color:var(--red)}
+.tl article::before{transition:background .2s,transform .2s}.tl article:hover::before{background:var(--red);transform:scale(1.25)}
+.tl h3{transition:color .2s}.tl article:hover h3{color:var(--red)}
+/* work */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+h2.d{font-size:clamp(44px,7vw,92px)}
+.stat{display:flex;align-items:baseline;gap:14px;margin:36px 0 12px}
+.stat .d{font-size:clamp(90px,14vw,170px);color:var(--red)}
+.stat span{color:var(--mute);max-width:16ch}
+.muted{color:var(--mute);max-width:46ch}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px 20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center}
+.row h3{margin:0;font-size:19px}
+.row p{margin:4px 0 0;color:var(--mute);font-size:14px;grid-column:1}
+.row .links{grid-row:1/3;grid-column:2;display:flex;gap:10px}
+.pill{font-size:12px;font-weight:700;padding:8px 14px;border-radius:3px;background:var(--red)}
+.pill.o{background:none;border:1px solid var(--line)}
+.pill:hover{border-color:var(--red)}
+.strip{display:flex;flex-wrap:wrap;gap:12px 36px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:Anton,sans-serif;font-size:22px;letter-spacing:.06em;color:#55555f;text-transform:uppercase;justify-content:space-between}
+/* about / red card */
+.card{background:linear-gradient(160deg,var(--red),var(--red-d));border-radius:6px;padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+.card q{font-family:Anton,sans-serif;font-size:clamp(28px,3.4vw,40px);line-height:1.1;text-transform:uppercase;quotes:none}
+.card small{font-size:13px;opacity:.85}
+.skills{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0}
+.skills li{padding:16px 0;border-bottom:1px solid var(--line)}
+.skills strong{display:block}
+.skills span{color:var(--mute);font-size:14px}
+/* timeline */
+.tl{position:relative;margin:48px 0 0;padding-left:34px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--red)}
+.tl article{position:relative;padding:0 0 34px}
+.tl article::before{content:"";position:absolute;left:-34px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--red)}
+.tl h3{margin:0 0 4px;font-size:26px}
+.tl p{margin:0;color:var(--mute);max-width:56ch}
+/* contact */
+.end{text-align:left}
+.end h2{font-size:clamp(64px,13vw,190px)}
+.soc{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:13px}
+@media(max-width:860px){
+.hero .wrap,.split{grid-template-columns:1fr;gap:36px}
+section{padding:68px 0}
+.stage{align-items:flex-start;padding-top:36px}.hero .wrap{gap:24px}.term{display:none}
+nav{gap:16px}
+}
+@media(max-width:560px){nav a:nth-child(n+4){display:none}.row{grid-template-columns:1fr}.row .links{grid-row:auto;grid-column:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body id="top">
+<header><div class="wrap">
+<a class="logo" href="#top">SURINDER.</a>
+<nav aria-label="Main"><a href="#work">Work</a><a href="#about">About</a><a href="#now">Now</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="hero">
+<div class="stage">
+<div class="d ghostword" aria-hidden="true">Portfolio</div>
+<div class="cue" aria-hidden="true">Scroll ↓</div>
+<div class="wrap">
+<div>
+<p class="tag">Biometric Integration Intern at Shivsoft</p>
+<h1 class="d">Surinder<br>Singh.</h1>
+<p class="lead">Cybersecurity professional, web developer and content creator. I run honeypot labs, practice ethical hacking and ship secure web apps.</p>
+<a class="btn" href="#work">See my projects</a> <a class="btn ghost" href="#contact">Get in touch</a>
+</div>
+<div class="term" aria-label="Sample honeypot log">
+<div class="bar"><i></i><i></i><i></i></div>
+<div class="l">$ tail -f honeypot.log</div>
+<div class="l">22:04:11 ssh login attempt <b>root</b></div>
+<div class="l">22:04:13 brute force <b>blocked</b></div>
+<div class="l">22:05:02 port scan from 45.x.x.x</div>
+<div class="l">22:05:09 alert sent to dashboard</div>
+<div class="l">22:05:10 <b>● watching</b></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="work"><div class="wrap">
+<div class="split">
+<div>
+<h2 class="d">The work.<br><span class="red">The projects.</span></h2>
+<div class="stat"><div class="d">6</div><span>Live projects, each with source code</span></div>
+<p class="muted">Small tools built to teach how attacks work and how to stop them.</p>
+</div>
+<div class="rows">
+<div class="row"><div><h3>Password Strength Checker</h3><p>Rates a password in real time by length, variety and symbols.</p></div><div class="links"><a class="pill" href="https://password-strength-checker-surinder.netlify.app">Live demo</a><a class="pill o" href="https://github.com/Whitedevil0237/Password-Strength-Checker">Source</a></div></div>
+<div class="row"><div><h3>Guess the Password Game</h3><p>A hint-based game: crack the secret within limited attempts.</p></div><div class="links"><a class="pill" href="https://password-guess-game.netlify.app/">Live demo</a><a class="pill o" href="https://github.com/Whitedevil0237/Password-Guess-Game">Source</a></div></div>
+<div class="row"><div><h3>Encryption &amp; Decryption</h3><p>Encrypts and decrypts messages so private text stays unreadable.</p></div><div class="links"><a class="pill" href="https://msg-securely.netlify.app">Live demo</a><a class="pill o" href="https://github.com/Whitedevil0237/Encryption-Decryption-">Source</a></div></div>
+<div class="row"><div><h3>Instagram Fake Login Page</h3><p>An awareness demo of how phishing pages work and how to spot them.</p></div><div class="links"><a class="pill" href="https://fakelogin-page.netlify.app/">Live demo</a><a class="pill o" href="https://github.com/Whitedevil0237/fake-login-page">Source</a></div></div>
+<div class="row"><div><h3>FollowU Manager</h3><p>Tracks follower analytics, engagement and user interactions.</p></div><div class="links"><a class="pill" href="https://followumanager.netlify.app/">Live demo</a><a class="pill o" href="https://github.com/Whitedevil0237/Followupmanager">Source</a></div></div>
+<div class="row"><div><h3>Cyber Defense Simulator</h3><p>Simulates threat detection, defense strategies and incident analysis.</p></div><div class="links"><a class="pill" href="https://cyber-defense-sim--surindersingh01.replit.app/">Live demo</a></div></div>
+</div>
+</div>
+<div class="strip" style="margin-top:72px" aria-label="Tools"><span>React</span><span>Vite</span><span>Node</span><span>Tailwind</span><span>Netlify</span><span>TryHackMe</span></div>
+</div></section>
+
+<section id="about"><div class="wrap split">
+<div>
+<h2 class="d">I think like an attacker.<br><span class="red">Defend like a pro.</span></h2>
+<p class="muted" style="margin-top:28px">I test systems in controlled labs to learn how they break, then build web apps that hold up against those attacks. I also turn what I learn into short, practical videos for beginners on YouTube and Instagram.</p>
+<ul class="skills">
+<li><strong>Ethical hacking</strong><span>Penetration testing, vulnerability analysis, red teaming</span></li>
+<li><strong>Network security</strong><span>Firewalls, traffic monitoring, threat detection</span></li>
+<li><strong>Web development</strong><span>React, Vite, Node, Tailwind, Netlify</span></li>
+<li><strong>Content creation</strong><span>Security awareness videos and short-form content</span></li>
+</ul>
+</div>
+<div class="card"><q>From raw logs to real defense.</q><small>Honeypot telemetry, ethical hacking and secure web apps.</small></div>
+</div></section>
+
+<section id="now"><div class="wrap">
+<h2 class="d">What I’m<br><span class="red">working on.</span></h2>
+<div class="tl">
+<article><h3 class="d">Learning</h3><p>Penetration testing methodology and hands-on rooms on TryHackMe.</p></article>
+<article><h3 class="d">Exploring</h3><p>How AI can improve threat detection and automate security workflows.</p></article>
+<article><h3 class="d">Building</h3><p>A secure login system with strong authentication and abuse protection.</p></article>
+</div>
+</div></section>
+
+<section id="certs"><div class="wrap split">
+<h2 class="d">Trained.<br><span class="red">Certified.</span></h2>
+<div><p class="muted" style="margin-top:0">Cybersecurity training and certifications, with details on each one in the folder.</p><p><a class="btn" href="https://drive.google.com/drive/folders/1CM8zrioPSYToLZDsQTK_Zg0gg6IdByK1">Open certifications folder</a></p></div>
+</div></section>
+
+<section id="contact" class="end"><div class="wrap">
+<h2 class="d">Let’s work<br><span class="red">together.</span></h2>
+<div class="soc">
+<a class="btn" href="https://www.linkedin.com/in/cyber-surinder">LinkedIn</a>
+<a class="btn ghost" href="https://github.com/Whitedevil0237">GitHub</a>
+<a class="btn ghost" href="https://www.youtube.com/@Cyber_Surinder">YouTube</a>
+<a class="btn ghost" href="https://www.instagram.com/cybersurinder/">Instagram</a>
+<a class="btn ghost" href="https://tryhackme.com/p/surindersingh07694">TryHackMe</a>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Surinder Singh. All rights reserved.</div></footer>
+<script>
+(function(){
+var hero=document.getElementById('hero'),stage=hero.querySelector('.stage'),head=document.querySelector('header');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){hero.style.height='auto';hero.style.setProperty('--p',1);hero.classList.add('on');return}
+var tick=false;
+function upd(){
+tick=false;
+var span=hero.offsetHeight-stage.offsetHeight;
+var p=Math.min(1,Math.max(0,(head.offsetHeight-hero.getBoundingClientRect().top)/span));
+hero.style.setProperty('--p',p.toFixed(3));
+hero.classList.toggle('on',p>.4);
+}
+function req(){if(!tick){tick=true;requestAnimationFrame(upd)}}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd();
+})();
+</script>
+</body>
+</html>
